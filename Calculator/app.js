@@ -60,6 +60,38 @@ let acceptNumbers = function () {
 
 };
 
+let average = function (numbers) {
+
+    const sum = add(numbers);
+    const count = numbers.length;
+    if (count !== 0) {
+        return divide(sum, count);
+    } else {
+        console.log('Please enter more numbers');
+    }
+
+};
+
+let min = function (numbers) {
+
+
+    if (numbers.length !== 0) {
+        return Math.min(...numbers);
+    } else {
+        console.log('Please enter more numbers');
+    }
+
+};
+
+let max = function (numbers) {
+
+    if (numbers.length !== 0) {
+        return Math.max(...numbers);
+    } else {
+        console.log('Please enter more numbers');
+    }
+
+};
 
 
 (function () {
@@ -106,6 +138,34 @@ let acceptNumbers = function () {
             console.log(result);
             break;
 
+        case ('average'):
+            nums = acceptNumbers();
+            if (nums) {
+                result = average(nums);
+                console.log(result);
+            }
+            break;
+        case ('square'):
+            num = checkNumber(prompt("Enter number: "));
+            result = Math.pow(num, 2);
+            console.log(result);
+            break;
+
+        case ('minimum'):
+            nums = acceptNumbers();
+            if (nums) {
+                result = min(nums);
+                console.log(result);
+            }
+            break;
+
+        case ('maximum'):
+            nums = acceptNumbers();
+            if (nums) {
+                result = max(nums);
+                console.log(result);
+            }
+            break;
 
 
 
