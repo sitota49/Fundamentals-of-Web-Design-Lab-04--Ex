@@ -17,6 +17,15 @@ let ac2 = {
     balance: 100
 }
 
+let checkNumber = function (input) {
+    if (isNaN(input)) {
+        console.log('Please enter numbers only');
+        return;
+    } else {
+        return input;
+    }
+};
+
 let getAcc = function (accName) {
     if (accName === 'Account1') {
         return ac1;
@@ -80,7 +89,7 @@ let transfer = function (acc1, acc2, amnt) {
         case 'deposit':
             q = prompt("Enter account name: ");
             acc = getAcc(q);
-            amnt = prompt("Enter amount: ");
+            amnt = checkNumber(prompt("Enter amount: "));
             acc.balance = deposit(acc.balance, amnt);
             console.log("Current balance is", acc.balance);
             break;
@@ -94,7 +103,7 @@ let transfer = function (acc1, acc2, amnt) {
         case 'withdraw':
             q = prompt("Enter account name: ");
             acc = getAcc(q);
-            amnt = prompt("Enter amount: ");
+            amnt = checkNumber(prompt("Enter amount: "));
             acc.balance = withdraw(acc.balance, amnt);
             console.log("Current balance is", acc.balance);
 
@@ -106,7 +115,7 @@ let transfer = function (acc1, acc2, amnt) {
             q2 = prompt("Enter second account name: ");
             acc2 = getAcc(q2);
 
-            amnt = prompt("Enter amount: ");
+            amnt = checkNumber(prompt("Enter amount: "));
             acc1, acc2 = transfer(acc1, acc2, amnt);
             console.log("Account1 balance is", acc1.balance);
             console.log("Account2 balance is", acc2.balance);
